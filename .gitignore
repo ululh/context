@@ -1,0 +1,6 @@
+/infra
+**/credentials/
+**/output/
+**/__pycache__/
+**/build/
+notes
