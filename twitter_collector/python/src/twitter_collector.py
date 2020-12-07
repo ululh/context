@@ -22,9 +22,10 @@ class TwitterStreamer(TwythonStreamer):
         
     # Save each tweet to csv file
     def save_as_json(self, tweet):
-        with open(r'saved_tweets.json', 'a') as file:
+        with open(r'/app/saved_tweets_{}.json'.format(datetime.now().strftime('%Y%m%d')), 'a') as file:
             json.dump(tweet, file) 
             file.write('\n')
+            file.close()
 
 # Load credentials from json file
 with open("twitter_credentials.json", "r") as creds_file:
