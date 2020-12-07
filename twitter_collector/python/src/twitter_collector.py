@@ -22,7 +22,7 @@ class TwitterStreamer(TwythonStreamer):
         
     # Save each tweet to csv file
     def save_as_json(self, tweet):
-        with open(r'/app/saved_tweets_{}.json'.format(datetime.now().strftime('%Y%m%d')), 'a') as file:
+        with open(r'/app/{}_tweets_{}.json'.format(keyword, datetime.now().strftime('%Y%m%d')), 'a') as file:
             json.dump(tweet, file) 
             file.write('\n')
             file.close()

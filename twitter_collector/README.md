@@ -6,8 +6,12 @@ Depends on twython
 # Parameters
 keyword : the keyword to poll the Twitter Streaming API
 
-docker volume create tweets-vol
+# docker memo
+docker build -t context/twitter_collector .
+docker volume create tweets-vol   
 docker run -d \
+  --restart=always \
   --name twitter_collector \
   --mount source=tweets-vol,target=/app \
   context/twitter_collector:latest
+
